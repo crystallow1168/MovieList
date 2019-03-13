@@ -1,0 +1,10 @@
+import Movie from './Movie.js';
+
+const MovieList = props => React.createElement(
+   "div",
+   { className: "list-movie" },
+   props.movies.map(movie => React.createElement(Movie, { eachMovie: movie }))
+);
+
+export default MovieList;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy9jb21wb25lbnRzL01vdmllTGlzdC5qc3giXSwibmFtZXMiOlsiTW92aWUiLCJNb3ZpZUxpc3QiLCJwcm9wcyIsIm1vdmllcyIsIm1hcCIsIm1vdmllIl0sIm1hcHBpbmdzIjoiQUFBQSxPQUFPQSxLQUFQLE1BQWtCLFlBQWxCOztBQUVBLE1BQU1DLFlBQWFDLEtBQUQsSUFDZjtBQUFBO0FBQUEsS0FBSyxXQUFVLFlBQWY7QUFBNkJBLFNBQU1DLE1BQU4sQ0FBYUMsR0FBYixDQUFpQkMsU0FBUyxvQkFBQyxLQUFELElBQU8sV0FBV0EsS0FBbEIsR0FBMUI7QUFBN0IsQ0FESDs7QUFJQSxlQUFlSixTQUFmIiwiZmlsZSI6Ik1vdmllTGlzdC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBNb3ZpZSBmcm9tICcuL01vdmllLmpzJ1xuXG5jb25zdCBNb3ZpZUxpc3QgPSAocHJvcHMpID0+IChcbiAgIDxkaXYgY2xhc3NOYW1lPVwibGlzdC1tb3ZpZVwiPntwcm9wcy5tb3ZpZXMubWFwKG1vdmllID0+IDxNb3ZpZSBlYWNoTW92aWU9e21vdmllfS8+KX08L2Rpdj5cbilcblxuZXhwb3J0IGRlZmF1bHQgTW92aWVMaXN0Il19
