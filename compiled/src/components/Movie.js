@@ -1,0 +1,8 @@
+const Movie = props => React.createElement(
+    "div",
+    { className: "each-movie" },
+    props.eachMovie.title
+);
+
+export default Movie;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy9jb21wb25lbnRzL01vdmllLmpzeCJdLCJuYW1lcyI6WyJNb3ZpZSIsInByb3BzIiwiZWFjaE1vdmllIiwidGl0bGUiXSwibWFwcGluZ3MiOiJBQUFBLE1BQU1BLFFBQVNDLEtBQUQsSUFDVjtBQUFBO0FBQUEsTUFBSyxXQUFVLFlBQWY7QUFBNkJBLFVBQU1DLFNBQU4sQ0FBZ0JDO0FBQTdDLENBREo7O0FBSUEsZUFBZUgsS0FBZiIsImZpbGUiOiJNb3ZpZS5qcyIsInNvdXJjZXNDb250ZW50IjpbImNvbnN0IE1vdmllID0gKHByb3BzKSA9PiAoXG4gICAgPGRpdiBjbGFzc05hbWU9XCJlYWNoLW1vdmllXCI+e3Byb3BzLmVhY2hNb3ZpZS50aXRsZX08L2Rpdj5cbilcblxuZXhwb3J0IGRlZmF1bHQgTW92aWUiXX0=
