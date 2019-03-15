@@ -1,7 +1,10 @@
 import Movie from './Movie.js'
 
 const MovieList = (props) => (
-   <div className="list-movie">{props.movies.map(movie => <Movie movie={movie}/>)}</div>
+   <ul className="list-group">
+      {props.movies.map(movie => <Movie movie={movie} key={movie.title}/>)}
+   </ul>
 )
 
 export default MovieList
+
