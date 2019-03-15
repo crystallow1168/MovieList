@@ -1,5 +1,5 @@
 const Movie = (props) => (
-    <div className="each-movie">{props.movie.title}</div>
+    <div className="movie">{props.movie.title}</div>
 )
 
 export default Movie
