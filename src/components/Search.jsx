@@ -18,11 +18,13 @@ class Search extends React.Component {
         return (
             <div className="search-bar">
             <input type="text" placeholder="Search..." value={this.state.searchText} onChange={ (e) => this.handleChange(e) } ></input>
-            <button onClick={ () => this.props.submit(this.state.searchText)}>Submit</button>
+            <button className="btn btn-success" onClick={ () => this.props.submit(this.state.searchText)}>Search</button>
             </div>
         )
         
     }
 }
+
+
 
 export default Search
