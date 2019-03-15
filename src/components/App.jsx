@@ -1,5 +1,6 @@
 import exampleMovieList from '../data/exampleMovieList.js'
 import MovieList from './MovieList.js'
+import AddMovie from './AddMovie.js'
 import Search from './Search.js'
 
 class App extends React.Component {
@@ -7,23 +8,37 @@ class App extends React.Component {
         super(props);
 
         this.state = {
-            currentMovies: exampleMovieList
+            currentMovies: exampleMovieList,
+            userAdded: false
         }
     }
 
-    handleSubmit(searchStr) {
-        const movieResult = exampleMovieList.filter( movie => movie.title.toLowerCase().includes(searchStr))
+    handleSearch(searchStr) {
+        const movieResult = exampleMovieList.filter(movie => movie.title.toLowerCase().includes(searchStr))
         this.setState({
             currentMovies: movieResult
         })
     }
 
+    handleAdd(addStr) {
+        if (this.state.userAdded) {
+            this.setState((prevMovie) => ({
+                currentMovies: [...prevMovie.movies, {title: addStr}]
+            }))
+        } else {
+            this.setState({
+                currentMovies: [{title: addStr}],
+                userAdded:true
+            })
+        }
+    }
 
     render() {
         return (
             <div>
                 <h1>Movie List</h1>
-                <div><Search submit={this.handleSubmit.bind(this)}/></div>
+                <div><AddMovie submit={this.handleAdd.bind(this)}/></div>
+                <div><Search submit={this.handleSearch.bind(this)}/></div>
                 <div><MovieList movies={this.state.currentMovies}/></div>
             </div>
         )
