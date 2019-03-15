@@ -9,7 +9,8 @@ class App extends React.Component {
 
         this.state = {
             currentMovies: exampleMovieList,
-            userAdded: false
+            userAdded: false,
+            watched: false
         }
     }
 
@@ -19,12 +20,11 @@ class App extends React.Component {
             currentMovies: movieResult
         })
     }
-
+ 
     handleAdd(addStr) {
         if (this.state.userAdded) {
             this.setState((prevMovie) => ({
-                
-                currentMovies: [...prevMovie.currentMovies, {title: addStr}]
+                currentMovies: [...prevMovie.currentMovies, {title: addStr, watched: false}]
             }))
         } else {
             this.setState({
@@ -34,16 +34,28 @@ class App extends React.Component {
         }
     }
 
+    toggleWatched(clickedMovie) {
+        alert('ya')
+        this.setState(prevState => ({
+            currentMovies: prevState.currentMovies.map((movie) => {
+                if (movie.title === clickedMovie) {
+                    movie.watched = !movie.watched;
+                }
+                return movie;
+            })
+        }))
+    }
+
     render() {
         return (
             <div>
-                <h1>Movie List</h1>
+                <p className="font-weight-bolder">Movie List</p>
                 <div><AddMovie submit={this.handleAdd.bind(this)}/></div>
                 <div><Search submit={this.handleSearch.bind(this)}/></div>
-                <div><MovieList movies={this.state.currentMovies}/></div>
+                <div><MovieList movies={this.state.currentMovies} submit={this.toggleWatched.bind(this)}/></div>
             </div>
         )
     }
 }
 
-export default App  
+export default App;
