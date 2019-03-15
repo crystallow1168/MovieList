@@ -23,7 +23,8 @@ class App extends React.Component {
     handleAdd(addStr) {
         if (this.state.userAdded) {
             this.setState((prevMovie) => ({
-                currentMovies: [...prevMovie.movies, {title: addStr}]
+                
+                currentMovies: [...prevMovie.currentMovies, {title: addStr}]
             }))
         } else {
             this.setState({
