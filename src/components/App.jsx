@@ -35,7 +35,6 @@ class App extends React.Component {
     }
 
     toggleWatched(clickedMovie) {
-        alert('ya')
         this.setState(prevState => ({
             currentMovies: prevState.currentMovies.map((movie) => {
                 if (movie.title === clickedMovie) {
