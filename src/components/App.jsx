@@ -8,13 +8,13 @@ class App extends React.Component {
         super(props);
 
         this.state = {
-            currentMovies: exampleMovieList,
+            currentMovies: [],
             userAdded: false
         }
     }
 
     handleSearch(searchStr) {
-        const movieResult = exampleMovieList.filter(movie => movie.title.toLowerCase().includes(searchStr))
+        const movieResult = this.state.currentMovies.filter(movie => movie.title.toLowerCase().includes(searchStr))
         this.setState({
             currentMovies: movieResult
         })
