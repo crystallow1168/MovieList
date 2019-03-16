@@ -6,9 +6,9 @@ const MovieList = (props) => (
       <li className="nav-item">
          <a className="nav-link active" href="#">To Watch</a>
          <ul className="list-group">
-            {props.movies.map(movie => 
+            {(props.movies.filter(movie => movie.watched === false)).map(movie => 
             <Movie movie={movie} 
-            key={movie.title}
+            key={movie.toWatchTitle}
             toggleWatchedBadge={props.toggleWatchedBadge}
             />)}
          </ul>
@@ -16,10 +16,10 @@ const MovieList = (props) => (
       
       <li>
       <a className="nav-link active" href="#">Watched</a>
-         <ul className="list-group">
-            {props.movies.map(movie => 
+      <ul className="list-group">
+            {(props.movies.filter(movie => movie.watched === true)).map(movie => 
             <Movie movie={movie} 
-            key={movie.title}
+            key={movie.toWatchTitle}
             toggleWatchedBadge={props.toggleWatchedBadge}
             />)}
          </ul>
@@ -29,3 +29,4 @@ const MovieList = (props) => (
 
 
 export default MovieList;
+
