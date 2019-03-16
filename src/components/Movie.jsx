@@ -3,7 +3,7 @@ const Movie = (props) => (
         {props.movie.title}
         <span className="badge badge-primary badge-pill" 
 
-        onClick={() => props.submit(props.movie.title)}>
+        onClick={() => props.toggleWatchedBadge(props.movie.title)}>
         {props.movie.watched ? 'Watched' : 'Not Watched'}
         </span>
     </li>
