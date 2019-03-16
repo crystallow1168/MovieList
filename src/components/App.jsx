@@ -9,8 +9,7 @@ class App extends React.Component {
 
         this.state = {
             currentMovies: exampleMovieList,
-            userAdded: false,
-            watched: false
+            userAdded: false
         }
     }
 
@@ -28,13 +27,13 @@ class App extends React.Component {
             }))
         } else {
             this.setState({
-                currentMovies: [{title: addStr}],
-                userAdded:true
+                currentMovies: [{title: addStr, watched: false}],
+                userAdded: true
             })
         }
     }
 
-    toggleWatched(clickedMovie) {
+    toggleWatchedBadge(clickedMovie) {
         this.setState(prevState => ({
             currentMovies: prevState.currentMovies.map((movie) => {
                 if (movie.title === clickedMovie) {
@@ -51,7 +50,7 @@ class App extends React.Component {
                 <p className="font-weight-bolder">Movie List</p>
                 <div><AddMovie submit={this.handleAdd.bind(this)}/></div>
                 <div><Search submit={this.handleSearch.bind(this)}/></div>
-                <div><MovieList movies={this.state.currentMovies} submit={this.toggleWatched.bind(this)}/></div>
+                <div><MovieList movies={this.state.currentMovies} toggleWatchedBadge={this.toggleWatchedBadge.bind(this)}/></div>
             </div>
         )
     }
