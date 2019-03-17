@@ -47,7 +47,7 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <p className="font-weight-bolder">Movie List</p>
+                <h1 className="font-weight-bolder">Movie List</h1>
                 <div><AddMovie submit={this.handleAdd.bind(this)}/></div>
                 <div><Search submit={this.handleSearch.bind(this)}/></div>
                 <div><MovieList movies={this.state.currentMovies} toggleWatchedBadge={this.toggleWatchedBadge.bind(this)}/></div>
