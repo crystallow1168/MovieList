@@ -11,7 +11,6 @@ class MovieList extends React.Component {
    }
 
    handleTabClicked() {
-      console.log('hiii')
       this.setState ({
          toWatchTabClicked: !(this.state.toWatchTabClicked),
          watchedTabClicked: !(this.state.watchedTabClicked)
