@@ -29,10 +29,10 @@ Set up:
 
 10) created movie.jsx and movieList.jsx , so that we can pass them in the components
 
-11) having problem with props, console logging and checking each files
-OMGERGHHHHH read documentations, had dinner and FOUND IT!! props.movie.title
+11) having problem with props, console logging and checking each files. ex:props.movie.title
 
-12) Created the search input, but had trouble matching the search value to existing movieList.
+12) Created the search input, but had trouble matching the search value to existing movieList. 
+// handle search ahs 2 event handler: 1) handle the search text 2) handle the submit button
 
 13) Created add, which is similar to the search. Replacing the search list with newly added movies
 
@@ -40,6 +40,11 @@ OMGERGHHHHH read documentations, had dinner and FOUND IT!! props.movie.title
 tab: https://getbootstrap.com/docs/4.3/components/navs/
 badge:https://getbootstrap.com/docs/4.3/components/list-group/
 
+15) debugging process, cant find parent constructor: added </div>
+
+16) XX is not a function: check uppercase and lowercase
+
+17) to chnage thestate, dont forget : [on setState: the key needs to call "this.state"]
 
 ------------------------------------------------------------
 Notes:
