@@ -1,4 +1,3 @@
-
 class AddMovie extends React.Component {
     constructor(props) {
         super(props) 
@@ -21,7 +20,6 @@ class AddMovie extends React.Component {
             <button className="btn btn-primary" onClick={ () => this.props.submit(this.state.myList)}>Submit</button>
             </div>
         )
-        
     }
 }
 
