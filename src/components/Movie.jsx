@@ -8,7 +8,7 @@ class Movie extends React.Component {
     }
 
     handleDetailToggle() {
-        this.setState({
+        this.setState ({
             detailToggle: !this.state.detailToggle
         })
     }
