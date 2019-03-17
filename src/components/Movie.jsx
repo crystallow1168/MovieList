@@ -3,33 +3,36 @@ class Movie extends React.Component {
         super(props)
 
         this.state = {
-            detailToggle: false
+            detailToggle: true
         }
+    }
+
+    handleDetailToggle() {
+    
     }
 
     render() {
         return(
-            <div>
-                <li className="list-group-item d-flex justify-content-between align-items-center"
-                 >
-                    {this.props.movie.title}
-                    <span className="badge badge-primary badge-pill" 
-                    onClick={() => this.props.toggleWatchedBadge(this.props.movie.title)}>
-                    {this.props.movie.watched ? 'Watched' : 'Not Watched'}
-                    </span>
-
-                <div className={this.state.showDetail ? '' : 'd-none'}>
+                <li className="list-group-item">
+                <h5>{this.props.movie.title}</h5>
+                    
+                <div className="d-flex column ">
                     <div>
                         <div>Release Date</div>
                         <div>Run Time</div>
                         <div>Metascore</div>
                         <div>IMDBRating</div>
+                        <span className="badge badge-primary badge-pill" 
+                        onClick={() => this.props.toggleWatchedBadge(this.props.movie.title)}>
+                        {this.props.movie.watched ? 'Watched' : 'Not Watched'}
+                        </span>
                     </div>
                 </div>
+
                 </li>
-            </div>
         )
     }
 } 
 
 export default Movie;
+
