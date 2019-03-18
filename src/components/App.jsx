@@ -13,6 +13,26 @@ class App extends React.Component {
         }
     }
 
+
+
+    testAPI() {
+        $.get('https://api.themoviedb.org/3/search/movie', {
+            api_key: 'a00b7e150ec94b7216ff2a3cbf8f406d',
+            query: 'harry'
+          })
+        .done(({items}) => {
+            // if (callback) {
+            // callback(items);
+            // }
+            console.log(items)
+        })
+        .fail(({responseJSON}) => {
+            responseJSON.error.errors.forEach((err) =>
+            console.error(err)
+            );
+        });
+    }
+
     handleSearch(searchStr) {
         const movieResult = this.state.currentMovies.filter(movie => movie.title.toLowerCase().includes(searchStr))
         this.setState({
@@ -33,6 +53,7 @@ class App extends React.Component {
         }
     }
 
+
     toggleWatchedBadge(clickedMovie) {
         this.setState(prevState => ({
             currentMovies: prevState.currentMovies.map((movie) => {
@@ -51,9 +72,32 @@ class App extends React.Component {
                 <div><AddMovie submit={this.handleAdd.bind(this)}/></div>
                 <div><Search submit={this.handleSearch.bind(this)}/></div>
                 <div><MovieList movies={this.state.currentMovies} toggleWatchedBadge={this.toggleWatchedBadge.bind(this)}/></div>
+                <button onClick={this.testAPI}>TEST</button>
             </div>
         )
     }
 }
 
 export default App;
+
+    // testAPI() {
+    //     $.get('https://www.googleapis.com/youtube/v3/search', {
+    //         part: 'snippet',
+    //         key: 'AIzaSyCW-dII-mgu6_EdvvitSMTmGKTJq9WfqDs',
+    //         q: 'harry',
+    //         maxResults: 10,
+    //         type: 'video',
+    //         videoEmbeddable: 'true'
+    //       })
+    //     .done(({items}) => {
+    //         // if (callback) {
+    //         // callback(items);
+    //         // }
+    //         console.log(items)
+    //     })
+    //     .fail(({responseJSON}) => {
+    //         responseJSON.error.errors.forEach((err) =>
+    //         console.error(err)
+    //         );
+    //     });
+    // }
