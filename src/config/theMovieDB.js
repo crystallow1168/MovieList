@@ -1,0 +1,3 @@
+var THEMOVIEDB_API_KEY = 'a00b7e150ec94b7216ff2a3cbf8f406d';
+
+export default THEMOVIEDB_API_KEY;

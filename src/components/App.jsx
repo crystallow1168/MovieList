@@ -13,26 +13,6 @@ class App extends React.Component {
         }
     }
 
-
-
-    testAPI() {
-        $.get('https://api.themoviedb.org/3/search/movie', {
-            api_key: 'a00b7e150ec94b7216ff2a3cbf8f406d',
-            query: 'harry'
-          })
-        .done(({items}) => {
-            // if (callback) {
-            // callback(items);
-            // }
-            console.log(items)
-        })
-        .fail(({responseJSON}) => {
-            responseJSON.error.errors.forEach((err) =>
-            console.error(err)
-            );
-        });
-    }
-
     handleSearch(searchStr) {
         const movieResult = this.state.currentMovies.filter(movie => movie.title.toLowerCase().includes(searchStr))
         this.setState({
@@ -72,7 +52,6 @@ class App extends React.Component {
                 <div><AddMovie submit={this.handleAdd.bind(this)}/></div>
                 <div><Search submit={this.handleSearch.bind(this)}/></div>
                 <div><MovieList movies={this.state.currentMovies} toggleWatchedBadge={this.toggleWatchedBadge.bind(this)}/></div>
-                <button onClick={this.testAPI}>TEST</button>
             </div>
         )
     }
