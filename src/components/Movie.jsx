@@ -9,11 +9,10 @@ class Movie extends React.Component {
     }
 
     getMovie() {
-        console.log(this.props)
-        const getMovieTitle = this.props.movie.title
+
         $.get('https://api.themoviedb.org/3/search/movie', {
             api_key: 'a00b7e150ec94b7216ff2a3cbf8f406d',
-            query: getMovieTitle
+            query: 'harry'
           })
         .done(({results}) => {
             // if (callback) {
